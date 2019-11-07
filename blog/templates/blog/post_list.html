@@ -1,0 +1,19 @@
+<html>
+    <p>Hi there!</p>
+    <p>It works!</p>
+
+    <p>{{ result.msg }}</p>
+    <p>{{ result.msg1 }}</p>
+    <p>{{ result.msg2 }}</p>
+
+    <ol>
+    {% for item in result.arr %}
+    <li>{{ item }}</li>
+    {% endfor %}
+    </ol>
+
+    {% if result.bool %}
+    <p>it is TRUE!</p>
+    {% endif %}
+
+</html>
