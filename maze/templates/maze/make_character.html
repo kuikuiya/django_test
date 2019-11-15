@@ -5,6 +5,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
         <script>
+            let step_title = [
+                "1. Roll stats (능력치를 굴려요)",
+                "2. 최대 건강",
+                "3. 시작 특성",
+                "4. 여섯가지 물품 선택",
+                
+            ]
+                
+            
                 /*
                 $(document).ready(function(){
                     $("button").click(function(){
@@ -13,6 +22,7 @@
                 });
                 */
                 //$.ajax({ url:'time/', data : { 'search_key':search_key}, success:function(data){ $('#data_table').html(data) } })
+                /*
                 $(function() {
                     
                     $('#AjaxStart').click(function() {
@@ -27,34 +37,24 @@
                         })
                     })
                 })
-
+*/
         </script>
     </head>
     <body>
-        <button id = 'AjaxStart'>AjaxStart</button>
-        <div id="div1"> new time
+        <div id = 'game_name'>
+            <h1><B>Maze</B></h1>
         </div>
-    <p><h1>Hi there!</h1></p>
-    <p>It works!</p>
-
-    <p>{{ result.msg }}</p>
-    <p>{{ result.msg1 }}</p>
-    <p>{{ result.msg2 }}</p>
-
-    <ol>
-    {% for item in result.arr %}
-    <li>{{ item }}</li>
-    {% endfor %}
-    </ol>
-
-    {% if result.bool %}
-    <p>it is TRUE!</p>
-    {% endif %}
-
-    {% for post in posts %}
-    <p><b>{{ post.title }}</b></p>
-    <p>{{ post.text | linebreaksbr }}</p>
-    
-    {% endfor %}
+        <div id = 'page_name'>
+            <h2><b>make character</b></h2>
+        </div>
+        <div id = 'step'>
+            1 / 12
+        </div>
+        <div id = 'step_title'>
+            step_title
+        </div>
+        <div id = 'step_contents'>
+            step_contents
+        </div>
     </body>
 </html>
