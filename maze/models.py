@@ -26,3 +26,13 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Player(models.Model):
+    name = models.TextField(blank=True, null=True)
+    step = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        if self.name is None:
+            return 'None'
+        return self.name
