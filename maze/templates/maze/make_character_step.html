@@ -2,9 +2,23 @@
     <head>
     </head>
     <body>
-        <h1>It's YOU! {{ data.user }}</h1>
+        <div id = 'game_name'>
+                <h1 class = 'a'><B>Maze</B></h1>
+            </div>
+            <div id = 'page_name'>
+                <h2><b>make character</b></h2>
+            </div>
+        <div id = "make-character">
+                <div>
+                    <!--<p>[[ descript( {{ step }} ) ]]</p>-->
+                    <p>{{ data.title }}</p>
+                    <p>{{ data.template }}</p>
+                </div>
+        </div>
+
+        <!--<h1>It's YOU! {{ data.user }}</h1>
         <p>Ok! It's step {{ data.now }}.</p>
         <a href="/v2/make/char/step/{{ data.prev }}">prev</a>
-        <a href="/v2/make/char/step/{{ data.next }}">next</a>
+        <a href="/v2/make/char/step/{{ data.next }}">next</a>-->
     </body>
 </html>

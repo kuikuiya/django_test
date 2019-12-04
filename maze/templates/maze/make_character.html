@@ -1,11 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <lik rel = "stylesheet" href = "{% static 'css/maze.css' %}"></lik>
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-
+        <link rel="stylesheet" href="{% static 'css/maze.css' %}"></link>
     </head>
     <body>
         <div id = 'game_name'>
@@ -14,39 +10,171 @@
         <div id = 'page_name'>
             <h2><b>make character</b></h2>
         </div>
-        <div id = "steps">
-            <p>[[ descript( {{ step }} ) ]]</p>
-            <table width = 300px height = 100px> 
+        <div id = "make-character">
+           <p>랜덤 캐릭터</p>
+           <table> 
+                <tr>
+                    <th>겉모습</th>
+                    <th>옷차림</th>
+                    <th>신체적특징</th>
+                    
+                </tr>
+                <tr>
+                    <td>{{ data.appearance }}</td>
+                    <td>{{ data.getsup }}</td>
+                    <td>{{ data.body_features }}</td>                </tr>
+                <tr></tr>
+                <tr>
+                        <th>성격</th>
+                        <th>말버릇</th>
+                        <th>뒷배경</th>                       
+                    </tr>
+                    <tr>
+                        <td>{{ data.personality }}</td>
+                        <td>{{ data.habit }}</td>
+                        <td>{{ data.background }}</td>                     
+                </tr>
+                <tr></tr>    
+                <tr>
+                    <th>전투장비</th>
+                    <th>소지품(6가지)</th>
+                    <th>시작특성</th>
+                </tr>
+                <tr>
+                    <td>{{ data.weapon }}</td>
+                    <td>{{ data.belongings }}</td>
+                    <td>{{ data.features }}</td>
+                </tr>
+                <tr></tr>   
+
+
                 <tr>
                     <th>근력</th>
                     <th>민첩성</th>
                     <th>정신력</th>
                 </tr>
                 <tr>
-                    <td>[[ ablity.strength ]]</td>
-                    <td>[[ ablity.dexterity ]]</td>
-                    <td>[[ ablity.intelligence ]]</td>
+                    <td>{{ data.strength }}</td>
+                    <td>{{ data.dexterity }}</td>
+                    <td>{{ data.intelligence }}</td>
                 </tr>
+                
                 <tr>
-                    <td><button v-on:click="ablity.strength = roll(1,6)">굴리기</button></td>
-                    <td><button v-on:click="ablity.dexterity = roll(1,6)">굴리기</button></td>
-                    <td><button v-on:click="ablity.intelligence = roll(1,6)">굴리기</button></td>
-                </tr>
+                        <th>이름</th>
+                        <th>레벨</th>
+                        <th>최대건강</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="char-name" value="{{ data.name}}" maxlength=10 size=40 style="text-align:center"></input></td>
+                        <td>{{ data.level }}</td>
+                        <td>{{ data.max_health_point }}</td>
+                    </tr>
+            
             </table>
-
-           <!-- <p>[[ descript( {{ step }} ) ]]</p>
-            <p>최대 건강은 4로 시작합니다.</p>
-                //-->
+            <a href="{% url 'hello_world' %}" class="button">이 캐릭터로 결정</a>
+            <a href="{% url 'make_char' %}" class="button">캐릭터 다시 만들기</a>
             
         </div>
         
-       <!-- <script src = "aaa.js"></script> //-->
-      <!-- <script src="{% static 'js/make_character.js' %}"></script> -->
-      <script>
+        <!-- <script src = "aaa.js"></script> //-->
+        <!-- <script src="{% static 'js/make_character.js' %}"></script> -->
+<!-- <script>
+            Vue.component('step1', {
+                data: {
+                    function() {
+                        return {
+                            count: 0
+                        }
+                    },
+                },
+                methods: {
+                    roll: function (n_dice, dice_n) {
+                        let result = 0
+                        for (i = 0; i <= n_dice; i++) {
+                            result = Math.ceil(Math.random() * 1000) % dice_n + 1
+                        }
+                        return result
+                    }
+                },
+                template: 
+                    `
+                    <table width = 300px height = 100px> 
+                        <tr>
+                            <th>근력</th>
+                            <th>민첩성</th>
+                            <th>정신력</th>
+                        </tr>
+                        <tr>
+                            <td>[[ ablity.strength ]]</td>
+                            <td>[[ ablity.dexterity ]]</td>
+                            <td>[[ ablity.intelligence ]]</td>
+                        </tr>
+                        <tr>
+                            <td><button v-on:click="details.ablity.strength = roll(1,6)">굴리기</button></td>
+                            <td><button v-on:click="details.ablity.dexterity = roll(1,6)">굴리기</button></td>
+                            <td><button v-on:click="details.ablity.intelligence = roll(1,6)">굴리기</button></td>
+                        </tr>
+                    </table>
+                    `
+            });
+            /*Vue.component('step2', {
+                template: `<p>최대 건강은 4로 시작합니다</p>`
+            });     
+        */
             new Vue({
                 delimiters: ['[[', ']]'],
-                el: '#steps',           
-                data: {               
+                el: '#make-character',         
+                data: { 
+                    steps: [
+                        { 
+                            title: "1. Roll stats (능력치를 굴려요)", 
+                            template: '<step1></step2>'
+                        },
+                    /*    { 
+                            title: "2. 최대 건강", 
+                            template: `<step2></step2>`
+                        }/*,
+                        { 
+                            title: "3. 시작 특성", 
+                            detail:
+                        },
+                        { 
+                            title: "4. 여섯가지 물품 선택", 
+                            detail:
+                        },
+                        { 
+                            title: "5. 전투장비를 선택하세요.", 
+                            detail:
+                        },
+                        { 
+                            title: "6. 겉모습", 
+                            detail:
+                        },
+                        { 
+                            title: "7. 신체특징", 
+                            detail:
+                        },
+                        { 
+                            title: "8. 뒷배경", 
+                            detail:
+                        },
+                        { 
+                            title: "9. 옷차림", 
+                            detail:
+                        },
+                        { 
+                            title: "10. 성격", 
+                            detail:
+                        },
+                        { 
+                            title: "11. 말버릇", 
+                            detail:
+                        },
+                        { 
+                            title: "12. 이름, 레벨, 경험치", 
+                            detail:
+                        }*/
+                    ],              
                     titles:        
                     [
                         "1. Roll stats (능력치를 굴려요)",
@@ -62,25 +190,22 @@
                         "11. 말버릇",
                         "12. 이름, 레벨, 경험치"
                     ],
-                    ablity: {
-                        strength: '-',
-                        dexterity: '-',
-                        intelligence: '-'
+                    details: {
+                        ablity: {
+                            strength: '-',
+                            dexterity: '-',
+                            intelligence: '-'
+                        },
+                        
                     }
-
+                    
                 },
                 methods: {
                     descript: function (step) {
                         return this.titles[parseInt(step)];
                     },
 
-                    roll: function (n_dice, dice_n) {
-                        let result = 0
-                        for (i = 0; i <= n_dice; i++) {
-                            result = Math.ceil(Math.random() * 1000) % dice_n + 1
-                        }
-                        return result
-                    }
+                    
                     
                     /*,
     
@@ -92,6 +217,6 @@
                     }*/
                 }
             })
-            </script>
+        </script>-->
     </body>
 </html>
