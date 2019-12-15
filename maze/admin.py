@@ -1,19 +1,27 @@
 from django.contrib import admin
-from .models import Character, Appearance, Getsup, BodyFeatures, Personality, \
+from .models import Character, NPCharacter, Monster, Spell, \
+    Appearance, Getsup, BodyFeatures, Personality, \
     Background, Habit, Belongings, Features, Weapon, FirstName, LastName, \
     NPCJob, Misfortune, Mission, NPCAim, Weakness, Asset, Method, Secret, \
     Fame, Hobby, Relationship, Divinity, Result, \
-    AerialAnimal, GroundAnimal, UnderwaterAnimal, MonsterBodyFeature, \
-    MonsterFeature, MonsterAbility, MonsterTactics, MonsterWeakness, \
-    MaterialEffect, MaterialElement, MaterialForm, SpiritualEffect, \
-    SpiritualElement, SpiritualForm, Mutation, Madness, MagicalDisaster, \
-    BookTopics, Potion, MagicMaterial, TreasureFeature, PreciousMaterial, \
-    Stuff, CityTopic, CityEvent, AreaTopic, HighClassBuilding, \
-    DownstreamBuilding, CityAction, BuildingSpace, StreetTactic, \
-    BuildingTactic, Faction, FactionFeature, FactionAim
+    MonsterType, MonsterBodyFeature, MonsterFeature, MonsterAbility, \
+    MonsterTactics, MonsterWeakness, MaterialEffect, MaterialElement, \
+    MaterialForm, SpiritualEffect, SpiritualElement, SpiritualForm, Mutation, \
+    Madness, MagicalDisaster, Book, Potion, MagicMaterial, \
+    TreasureFeature, PreciousMaterial, Stuff, CityTopic, CityEvent, \
+    AreaTopic, HighClassBuilding, DownstreamBuilding, CityAction, \
+    BuildingRoom, StreetTactic, BuildingTactic, Faction, FactionFeature, \
+    FactionAim, WildArea, WildTerrain, WildArtifact, WildAreaFeature, WildDiscovery, WildAction, WildThreat, \
+    Herb, ToxicPlant, MotelNamePrefix, MotelNameSuffix, MotelUniqueness, \
+    DungeonEntrance, DungeonForm, DungeonPlacement, WhyDungeonWasAbandoned, \
+    DungeonReward, DungeonAction, DungeonRoom, DungeonRoomDetail, \
+    DungeonMechanism, DungeonThreat, TrapEffect, TrapActuation              
 
 
 admin.site.register(Character)
+admin.site.register(NPCharacter)
+admin.site.register(Monster)
+admin.site.register(Spell)
 admin.site.register(Appearance)
 admin.site.register(Getsup)
 admin.site.register(BodyFeatures)
@@ -37,9 +45,7 @@ admin.site.register(Hobby)
 admin.site.register(Relationship)
 admin.site.register(Divinity)
 admin.site.register(Result)
-admin.site.register(AerialAnimal)
-admin.site.register(GroundAnimal)
-admin.site.register(UnderwaterAnimal)
+admin.site.register(MonsterType)
 admin.site.register(MonsterBodyFeature)
 admin.site.register(MonsterFeature)
 admin.site.register(MonsterAbility)
@@ -54,7 +60,7 @@ admin.site.register(SpiritualForm)
 admin.site.register(Mutation)
 admin.site.register(Madness)
 admin.site.register(MagicalDisaster)
-admin.site.register(BookTopics)
+admin.site.register(Book)
 admin.site.register(Potion)
 admin.site.register(MagicMaterial)
 admin.site.register(TreasureFeature)
@@ -66,9 +72,34 @@ admin.site.register(AreaTopic)
 admin.site.register(HighClassBuilding)
 admin.site.register(DownstreamBuilding)
 admin.site.register(CityAction)
-admin.site.register(BuildingSpace)
+admin.site.register(BuildingRoom)
 admin.site.register(StreetTactic)
 admin.site.register(BuildingTactic)
 admin.site.register(Faction)
 admin.site.register(FactionFeature)
 admin.site.register(FactionAim)
+admin.site.register(Weakness)
+admin.site.register(WildArea)
+admin.site.register(WildTerrain)
+admin.site.register(WildArtifact)
+admin.site.register(WildAreaFeature)
+admin.site.register(WildDiscovery)
+admin.site.register(WildAction)
+admin.site.register(WildThreat)
+admin.site.register(Herb)
+admin.site.register(ToxicPlant)
+admin.site.register(MotelNamePrefix)
+admin.site.register(MotelNameSuffix)
+admin.site.register(MotelUniqueness)
+admin.site.register(DungeonEntrance)
+admin.site.register(DungeonForm)
+admin.site.register(DungeonPlacement)
+admin.site.register(WhyDungeonWasAbandoned)
+admin.site.register(DungeonReward)
+admin.site.register(DungeonAction)
+admin.site.register(DungeonRoom)
+admin.site.register(DungeonRoomDetail)
+admin.site.register(DungeonMechanism)
+admin.site.register(DungeonThreat)
+admin.site.register(TrapEffect)
+admin.site.register(TrapActuation)

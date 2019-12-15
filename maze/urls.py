@@ -8,7 +8,8 @@ urlpatterns = [
 #    path('<str:user>/v2/make/char/step/<str:step>/', views.make_character_by_step_ver_template_with_user),
 
     path('make/char/', views.make_character_by_random, name='make_char'),
-    path('hello_world/', views.hello_world, name='hello_world'),
+    path('game/', views.play_game, name='game'),
+    path('register_data/', views.register_data, name='register_data')
 ]
 
 
