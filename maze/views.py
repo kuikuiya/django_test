@@ -264,6 +264,18 @@ def make_spell():
     return spell
 
 
+def make_place():
+    place_type = random.randint(1, 3)
+    if place_type == 1:
+        make_city()
+    elif place_type == 2:
+        make_wild()
+    else:
+        make_dungeon()
+
+
+
+
 def play_game(request):
     data = {}
     data['join_with'] = make_monster_by_random()

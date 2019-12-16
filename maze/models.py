@@ -120,6 +120,30 @@ class Spell(models.Model):
     def __str__(self):
         return self.name
 
+"""
+class City(models.Model):
+    city_topic = models.CharField(max_length=40, default='') 
+    building_room = models.CharField(max_length=40, default='')
+    street_tactic = models.CharField(max_length=40, default='')
+    building_tactic = models.CharField(max_length=40, default='')
+    faction = models.CharField(max_length=40, default='')
+    faction_feature = models.CharField(max_length=40, default='')
+    faction_aim = models.CharField(max_length=40, default='')
+
+    def __str__(self):
+        return self.city_topic + "/" + self.building_room + "/" \
+        + self.street_tactic + "/" + self.building_tactic + "/" + self.faction + "/" \
+        + self.faction_feature + "/" + self.faction_aim    
+
+
+
+class Wild(models.Model):
+    wild_area = models.CharField(max_length=40, default='')
+    wild_terrain = models.CharField(max_length=40, default='')
+"""
+class Dungeon(models.Model):
+    pass
+
 
 class Appearance(models.Model):
     word = models.CharField(max_length=40, default='')
@@ -547,7 +571,7 @@ class WildArtifact(models.Model):
     
     def __str__(self):
         return self.word
-        
+
 
 class WildAreaFeature(models.Model):
     word = models.CharField(max_length=40, default='')
